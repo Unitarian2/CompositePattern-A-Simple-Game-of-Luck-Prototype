@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6021999973005654642}
   - component: {fileID: 7223116863606552023}
   - component: {fileID: 4889042007155409181}
+  - component: {fileID: -3601134800254595819}
+  - component: {fileID: 5564565137201130468}
   m_Layer: 0
   m_Name: BeerMug
   m_TagString: Untagged
@@ -83,3 +85,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3601134800254595819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402326179861864648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ddcd6f76b94d94ba9274dc6fb3ceb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxXrotation: 10
+  maxYrotation: 30
+  maxZrotation: 5
+  meshes:
+  - {fileID: 5710817482946051779, guid: 49fd60892425cef43a3718e2e547e759, type: 3}
+--- !u!65 &5564565137201130468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402326179861864648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.19938627, y: 0.23623961, z: 0.16014099}
+  m_Center: {x: -0.030350056, y: 0.1206564, z: -0.0000000037252903}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1685736143667280055}
   - component: {fileID: 3494801414205721725}
   - component: {fileID: 6269072355288059284}
+  - component: {fileID: 9140175568703847912}
   m_Layer: 0
   m_Name: Briefcase
   m_TagString: Untagged
@@ -102,3 +103,24 @@ MonoBehaviour:
   meshes:
   - {fileID: 6610462251100039002, guid: 224bf7a6e33f8a24cb82701faf3b737b, type: 3}
   - {fileID: 2524525402733497595, guid: 12fd7b745f6bfd1409631096ed97192c, type: 3}
+--- !u!65 &9140175568703847912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134781517799910824}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7071317, y: 0.6331761, z: 0.16312522}
+  m_Center: {x: 0, y: 0.31656814, z: -0.000000011175871}

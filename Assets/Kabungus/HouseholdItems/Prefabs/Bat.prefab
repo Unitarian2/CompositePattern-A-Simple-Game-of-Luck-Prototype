@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6954263033493878967}
   - component: {fileID: 6281777074235995922}
   - component: {fileID: 8127218036640285656}
+  - component: {fileID: -4682025606601544799}
+  - component: {fileID: -1024523032085761101}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -83,3 +85,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4682025606601544799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7766828980278665741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62a8e7f696c2504296621996c02cc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxXrotation: 10
+  maxYrotation: 30
+  maxZrotation: 5
+  meshes:
+  - {fileID: 716655249603938094, guid: a065356909044b0428d4cdd57a9e3384, type: 3}
+--- !u!65 &-1024523032085761101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7766828980278665741}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.07436779, y: 0.93969, z: 0.07436779}
+  m_Center: {x: 0, y: 0.47079855, z: -0.000000040978193}
