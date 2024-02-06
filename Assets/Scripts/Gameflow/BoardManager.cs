@@ -18,6 +18,9 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private EventHandler eventHandler;
 
     bool isRewardCollected;
+    int modifier = 1;
+    int briefcaseLeft;
+    public int maxBriefcaseAmount;
 
     private void OnEnable()
     {
@@ -31,31 +34,46 @@ public class BoardManager : MonoBehaviour
         InputHandler.OnGameObjectClicked -= InputHandler_OnGameObjectClicked;
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         PopulateRewardTree();
+        briefcaseLeft = maxBriefcaseAmount;
+        
     }
 
     private void InputHandler_OnGameObjectClicked(GameObject obj)
     {
-        //Main Object'i seçmenin bir etkisi yok.
-        if(obj != mainBranch.RewardObject.gameObject && !isRewardCollected)
+        if (!isRewardCollected)
         {
-            //Brifcase'e týklandýysa, Bir Branch'e týklandý demektir.
-            if (obj.TryGetComponent(out Briefcase briefcase))
+            if (obj != mainBranch.RewardObject.gameObject)
             {
-                RewardObjectFactory.Instance.DespawnAll();
-                PopulateRewardTree();
-            }
-            //Seçeneklerden birine týklandý demektir.
-            else if (obj.TryGetComponent(out RewardObject rewardObject))
-            {
-                Debug.LogError("Collected Reward Value" + rewardObject.Value);
-                isRewardCollected = true;
-                eventHandler.OnRewardCollectedEvent(rewardObject.Value);
+                //Brifcase'e týklandýysa, Bir Branch'e týklandý demektir.
+                if (obj.TryGetComponent(out Briefcase briefcase))
+                {
+                    //Çanta açma hakkýmýz kalmadýysa bir aksiyon almýyoruz.
+                    if(briefcaseLeft > 0)
+                    {
+                        RewardObjectFactory.Instance.DespawnAll();
+                        PopulateRewardTree();
+                        modifier++;
+                        eventHandler.OnModifierChangedEvent(modifier);
+                        briefcaseLeft--;
+                        eventHandler.OnBriefcaseOpenedEvent(briefcaseLeft);
+                    }
+                    
+                }
+                //Seçeneklerden birine týklandý demektir.
+                else if (obj.TryGetComponent(out RewardObject rewardObject))
+                {
+                    Debug.Log("Collected Reward Value" + rewardObject.Value);
+                    isRewardCollected = true;
+                    eventHandler.OnRewardCollectedEvent(rewardObject.Value, modifier);
+                }
             }
         }
+        //Main Object'i seçmenin bir etkisi yok.
+        
     }
 
     private void PopulateRewardTree()
@@ -101,19 +119,4 @@ public class BoardManager : MonoBehaviour
         return rewards;
     }
 
-    public void ProceedInTree(GameObject chosenObject)
-    {
-        SelectObject(chosenObject);
-        GetNextBranch(chosenObject);
-    }
-
-    private void GetNextBranch(GameObject chosenObject)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void SelectObject(GameObject chosenObject)
-    {
-        throw new NotImplementedException();
-    }
 }
