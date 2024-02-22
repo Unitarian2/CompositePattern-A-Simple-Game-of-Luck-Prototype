@@ -17,6 +17,7 @@ Bu oyunda oyuncu her tur, 4 cisimden birini seçer. Her seçenekte bir çanta ve
 <b>InputHandler.cs</b> => Player'ın tıkladığı cismi tespit edip OnGameObjectClicked event'i ile yayınlayan sınıftır.<br><br>
 
 <b>---UI---</b><br>
-
+<b>EventHandler.cs</b> => Bu prototipte gameplay sırasında tetiklenen event'ler bir scriptable object üzerinde tanımlanmıştır. Bu event'leri tetiklemek veya dinlemek isteyen sınıflar bu Scriptable Object'i referans alarak kullanabilir.<br>
+<b>UIManager.cs</b> => EventHandler'ı dinleyerek UI'ı günceller.
 
 
